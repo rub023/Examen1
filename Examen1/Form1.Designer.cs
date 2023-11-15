@@ -55,7 +55,6 @@ namespace Examen1
             this.btnAgregarP = new System.Windows.Forms.Button();
             this.btbAreaP = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -318,15 +317,6 @@ namespace Examen1
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "label7";
-            // 
             // label8
             // 
             this.label8.AutoEllipsis = true;
@@ -353,7 +343,6 @@ namespace Examen1
             this.ClientSize = new System.Drawing.Size(461, 477);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
@@ -367,7 +356,6 @@ namespace Examen1
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -399,7 +387,6 @@ namespace Examen1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
     }

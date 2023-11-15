@@ -15,7 +15,6 @@ namespace Examen1
     {
         public double Area(double baseTriangulo, double altura)
         {
-            // Fórmula para el área de un triángulo: (base * altura) / 2
             return (baseTriangulo * altura) / 2;
         }
     }
@@ -23,7 +22,6 @@ namespace Examen1
     {
         public double Area(double lado1, double lado2)
         {
-            // Fórmula para el área de un rectángulo: lado1 * lado2
             return lado1 * lado2;
         }
     }
@@ -31,7 +29,6 @@ namespace Examen1
     {
         public double Area(double baseParalelogramo, double altura)
         {
-            // Fórmula para el área de un paralelogramo: base * altura
             return baseParalelogramo * altura;
         }
     }
