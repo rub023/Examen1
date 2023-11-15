@@ -21,9 +21,23 @@ namespace Examen1
         string rectanguloa = "";
         string trianguloa = "";
         string paralelogramoa = "";
+        private Stack<string> miPila = new Stack<string>();
         private void button1_Click(object sender, EventArgs e)
         {
+            int cant = miPila.Count;
+            miPila.Push(rectanguloa);
 
+            Console.WriteLine(string.Join(", ", miPila));
+            label8.Text = "Elementos en la pila:\n";
+
+            Stack<string> aux = new Stack<string>();
+            foreach (string elemento in miPila)
+            {
+                label8.Text += elemento + "\n";
+                aux.Push(elemento);
+            }
+
+            label8.Text += "Cantidad de elementos: " + miPila.Count;
         }
 
         private void btbAreaT_Click(object sender, EventArgs e)
@@ -40,7 +54,7 @@ namespace Examen1
             }
             else
             {
-                lblTriangulo.Text = "Ingrese valores numéricos válidos en los TextBox.";               
+                lblTriangulo.Text = "Ingrese  numéros en el TextBox.";
             }
         }
         
@@ -73,13 +87,12 @@ namespace Examen1
             if (double.TryParse(textBox4.Text, out Lada_A) && double.TryParse(textBox3.Text, out Lado_B))
             {
                 Rectangulo rectangulo = new Rectangulo();
-                double area = rectangulo.Area(Lada_A, Lado_B);
-                MessageBox.Show($"Área calculada: {area}", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                double area = rectangulo.Area(Lada_A, Lado_B);              
                 label3.Text = $"Área calculada del rectangulo es  : {area}";
             }
             else
             {
-                label3.Text = "Ingrese valores numéricos válidos en los TextBox.";
+                label3.Text = "Ingrese  numéros en el TextBox.";
             }
         }
 
@@ -96,7 +109,7 @@ namespace Examen1
             }
             else
             {
-                label4.Text = "Ingrese valores numéricos válidos en los TextBox.";
+                label4.Text = "Ingrese  numéros en el TextBox.";
             }
         }
 
@@ -112,14 +125,13 @@ namespace Examen1
             miPila.Push(rectanguloa);
             miPila.Push(trianguloa);
             miPila.Push(paralelogramoa);
-            Console.WriteLine(miPila);
-            //txtContenido.Text = miPila.ToString();
+            Console.WriteLine(miPila);           
             Stack<string> aux = new Stack<string>();
             while (miPila.Count > 0)
             {
 
                 string elemento = miPila.Pop();
-                label8.Text += "\n" + elemento;
+                label9.Text += "\n" + elemento;
                 aux.Push(elemento);
             }
             while (aux.Count > 0)
@@ -127,8 +139,48 @@ namespace Examen1
                 miPila.Push(aux.Pop());
 
             }
-            label8.Text += "\nElemento de cima: " + miPila.Peek();
-            label8.Text += "\nCantidad de elementos: " + miPila.Count;
+            label9.Text += "\nElemento de cima: " + miPila.Peek();
+            //label9.Text += "\nCantidad de elementos: " + miPila.Count;
+        }
+
+        private void btbAgregaT_Click(object sender, EventArgs e)
+        {
+            int cant = miPila.Count;
+            miPila.Push(trianguloa);
+
+            Console.WriteLine(string.Join(", ", miPila));
+
+            // Limpiar label antes de mostrar los elementos
+            label8.Text = "Elementos en la pila:\n";
+
+            Stack<string> aux = new Stack<string>();
+            foreach (string elemento in miPila)
+            {
+                label8.Text += elemento + "\n";
+                aux.Push(elemento);
+            }
+
+            // Actualizar la cantidad de elementos
+            label8.Text += "Cantidad de elementos: " + miPila.Count;
+        }
+
+        private void btnAgregarP_Click(object sender, EventArgs e)
+        {
+            int cant = miPila.Count;
+            miPila.Push(paralelogramoa);
+
+            Console.WriteLine(string.Join(", ", miPila));
+
+            label8.Text = "Elementos en la pila:\n";
+
+            Stack<string> aux = new Stack<string>();
+            foreach (string elemento in miPila)
+            {
+                label8.Text += elemento + "\n";
+                aux.Push(elemento);
+            }
+
+            label8.Text += "Cantidad de elementos: " + miPila.Count;
         }
     }
 }
